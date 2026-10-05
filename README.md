@@ -196,6 +196,20 @@ Further analysis could incorporate:
 
 ---
 
+## Excel Validation
+
+Excel was used as an independent validation layer between the SQL analysis and Power BI reporting.
+
+A PivotTable was used to reconcile fulfillment and delivery KPIs by warehouse and year. The validation confirmed the overall deterioration in 2026:
+
+- Average fulfillment time increased from **1.78 days in 2025 to 2.56 days in 2026**.
+- On-time delivery declined from **62.76% to 48.41%**.
+- W03 (Valencia DC) showed the strongest deterioration, supporting the subsequent root-cause investigation in Power BI.
+
+![Excel Validation](excel_validation.png)
+
+---
+
 ## Dashboard
 
 ### Operational Overview
