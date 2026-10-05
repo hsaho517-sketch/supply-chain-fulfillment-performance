@@ -20,7 +20,7 @@ Operations Management wants to understand:
 
 > **Where is the supply chain losing operational efficiency, and which suppliers, products, or fulfillment operations should management investigate first?**
 
-The analysis focuses on the operational chain:
+The analysis follows the operational chain:
 
 **Supplier → Inventory → Fulfillment → Delivery**
 
@@ -41,7 +41,7 @@ The project uses a synthetic relational supply chain dataset containing:
 - 18,000 shipments
 - 535,160 raw daily inventory snapshots
 
-The initial data-quality assessment also identified:
+The initial data-quality assessment identified:
 
 - 120 duplicate inventory snapshots
 - 2 suppliers with missing country information
@@ -70,7 +70,7 @@ Purchase order data was used to measure:
 - Supplier on-time performance
 - Quantity received in full
 
-Supplier performance was then compared across periods to identify deterioration.
+Supplier performance was compared across periods to identify operational deterioration.
 
 ### 3. Inventory Availability
 
@@ -80,7 +80,7 @@ A stockout was defined as:
 
 > **Available Quantity = 0**
 
-This allowed inventory availability problems to be analyzed by warehouse, supplier, product, and year.
+This allowed inventory availability problems to be analyzed across warehouses, suppliers, products, and time periods.
 
 ### 4. Fulfillment & Delivery
 
@@ -91,7 +91,7 @@ Customer orders and shipments were used to measure:
 - Total delivery time
 - On-time delivery
 
-Warehouse performance and monthly trends were compared to identify operational changes over time.
+Warehouse performance and monthly trends were compared to identify changes in operational performance over time.
 
 ### 5. Root Cause Investigation
 
@@ -109,7 +109,7 @@ The investigation then focused on the strongest anomalies identified in the oper
 
 Across completed shipments, only **57.11%** were delivered on time.
 
-Average fulfillment time was **2.10 days**, indicating that a substantial part of the service-level problem required investigation beyond the company-wide average.
+Average fulfillment time was **2.10 days**, indicating the need to investigate where operational performance was deteriorating beneath the company-wide average.
 
 ### 2. Valencia DC shows the weakest overall delivery performance
 
@@ -120,7 +120,7 @@ On-time delivery by distribution center:
 - Barcelona DC: **55.08%**
 - Valencia DC: **50.33%**
 
-The time trend revealed that Valencia's performance deteriorated particularly sharply during 2026.
+The time trend revealed a particularly sharp deterioration at Valencia during 2026.
 
 ### 3. Supplier G deteriorated sharply in 2026
 
@@ -148,11 +148,11 @@ At Valencia DC:
 
 **Average Fulfillment Time**
 
-2.1 days → **4.4 days**
+**2.1 days → 4.4 days**
 
 **On-Time Delivery**
 
-55.64% → **18.24%**
+**55.64% → 18.24%**
 
 The change beginning in March 2026 suggests an additional fulfillment issue at the distribution-center level rather than only an upstream supplier problem.
 
@@ -162,7 +162,7 @@ The change beginning in March 2026 suggests an additional fulfillment issue at t
 
 1. **Prioritize investigation of Supplier G's inbound reliability.** Review lead-time deterioration, delivery consistency, and supplier service-level performance before making structural sourcing decisions.
 
-2. **Review inventory policies for Supplier G products.** The increase in stockouts justifies investigating reorder points, safety stock levels, replenishment timing, and potential contingency supply options.
+2. **Review inventory policies for Supplier G products.** Investigate reorder points, safety stock levels, replenishment timing, and potential contingency supply options.
 
 3. **Investigate Valencia DC operations from March 2026 onward.** Review changes in handling processes, workload, staffing, capacity constraints, or other operational factors that could explain the increase in fulfillment time.
 
@@ -206,7 +206,7 @@ A PivotTable was used to reconcile fulfillment and delivery KPIs by warehouse an
 - On-time delivery declined from **62.76% to 48.41%**.
 - W03 (Valencia DC) showed the strongest deterioration, supporting the subsequent root-cause investigation in Power BI.
 
-![Excel Validation](excel_validation.png)
+![Excel KPI Validation](excel_validation.png)
 
 ---
 
@@ -214,11 +214,11 @@ A PivotTable was used to reconcile fulfillment and delivery KPIs by warehouse an
 
 ### Operational Overview
 
-![Operational Overview](executive_overview.png)
+![Supply Chain Operational Overview](executive_overview.png)
 
 ### Root Cause Analysis
 
-![Root Cause Analysis](root_cause_analysis.png)
+![Supply Chain Root Cause Analysis](root_cause_analysis.png)
 
 ---
 
@@ -241,5 +241,6 @@ Data modeling, DAX measures, KPI development, time-based analysis, supplier and 
 - `02_analytics_layer.sql` — Clean analytical views and operational metrics
 - `03_supply_chain_analysis.sql` — Business analysis and root-cause queries
 - `Supply_Chain_Fulfillment_Performance_Analysis.pbix` — Power BI report
+- `excel_validation.png` — Excel PivotTable used for KPI validation
 - `executive_overview.png` — Operational overview dashboard
-- `root_cause_analysis.png` — Root cause analysis dashboard
+- `root_cause_analysis.png` — Root-cause analysis dashboard
