@@ -1,5 +1,5 @@
 # Supply Chain & Fulfillment Performance Analysis
-
+🌐 Language: **English** | [Español](README_ES.md)
 ## Executive Summary
 
 This end-to-end Supply Chain Analytics project investigates where operational efficiency is being lost across supplier performance, inventory availability, fulfillment, and delivery service.
